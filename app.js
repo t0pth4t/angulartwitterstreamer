@@ -20,7 +20,9 @@ var io = require('socket.io').listen(server);
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -52,6 +54,11 @@ app.get('/api/name', api.name);
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
 
+
+	io.configure(function() {
+  io.set('transports', ['xhr-polling']);
+  io.set('polling duration', 10);
+});
 // Socket.io Communication
 io.sockets.on('connection', require('./routes/socket'));
 

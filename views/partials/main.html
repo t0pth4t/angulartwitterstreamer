@@ -1,0 +1,22 @@
+<div class="page-header">
+<img src="http://packerfantours.com/wp-content/uploads/2013/05/cowboys_vs_packers.jpg">
+</div>
+<h1>Last updated {{lastUpdated}}</h1>
+<div class="row">
+	<div class="col-md-6">
+		<div class="well" style="background:#FDBE16; color:green">
+			<h1>Total Packers Tweets: {{totalPackers}}</h1>
+			<h3 ng-repeat="recentPackerTweet in recentPackerTweets">{{recentPackerTweet}}</h3>
+
+		</div>
+	</div>
+
+<div class="col-md-6">
+	<div class="well" style="background:#0E2A52; color:#BEBEBE">
+		<h1>Total Cowboys Tweets: {{totalCowboys}}</h1>
+
+		<h3 ng-repeat="recentCowboyTweet in recentCowboyTweets">{{recentCowboyTweet}}</h3>
+	</div>
+</div>
+
+</div>

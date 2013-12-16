@@ -5,6 +5,11 @@
   "dependencies": {
     "socket.io": "~0.9.16",
     "express": "~3.2.6",
-    "jade": "~0.31.2"
+    "ejs": "~0.8.4",
+    "jade": "~0.31.2",
+    "moment": "latest",
+    "underscore": "*",
+    "cron": "*",
+    "ntwitter": "*"
   }
 }

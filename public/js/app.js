@@ -13,16 +13,19 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
+    when('/', {
+      templateUrl: 'partials/main.html',
       controller: 'MyCtrl1'
     }).
     when('/view2', {
-      templateUrl: 'partials/partial2',
+      templateUrl: 'partials/partial2.html',
       controller: 'MyCtrl2'
     }).
+    when('/view3',{
+      templateUrl: 'partials/partial3.html'
+    }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/'
     });
 
   $locationProvider.html5Mode(true);
